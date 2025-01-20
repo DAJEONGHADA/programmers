@@ -1,7 +1,7 @@
 SELECT
-    B.ANIMAL_ID,
-    B.NAME
-FROM ANIMAL_OUTS B
-LEFT JOIN ANIMAL_INS A
-ON B.ANIMAL_ID = A.ANIMAL_ID
-WHERE A.ANIMAL_ID IS NULL
+    ao.animal_id,
+    ao.name
+from animal_outs ao
+left join animal_ins ai on ao.animal_id = ai.animal_id
+where ai.animal_id is null
+order by animal_id, name
